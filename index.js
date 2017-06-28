@@ -1,7 +1,6 @@
 'use strict';
 
-
-module.exports = binarySearch;
+module.exports = binarySearch
 
 /**
  * @function binarySearch
@@ -14,16 +13,16 @@ module.exports = binarySearch;
  * */
 
 function binarySearch (array, elem, marker = {}) {
-	marker.min = marker.min || 0;
-	marker.max = marker.max || Math.floor(array.length / 2);
+	marker.min = marker.min || 0
+	marker.max = marker.max || Math.floor(array.length / 2)
 
-	const left = array[marker.min];
-	const right = array[marker.max];
-	const diff = marker.max - marker.min;
+	const left = array[marker.min]
+	const right = array[marker.max]
+	const diff = marker.max - marker.min
 
-  if (elem === right) {
-    return marker.max
-  }
+	if (elem === right) {
+		return marker.max
+	}
 
 	if (elem === left) {
 		return marker.min
@@ -34,17 +33,17 @@ function binarySearch (array, elem, marker = {}) {
 	}
   
 	if (elem > right) {
-		marker.min = marker.max;
-		marker.max += Math.ceil(diff / 2);
+		marker.min = marker.max
+		marker.max += Math.ceil(diff / 2)
 		return binarySearch(array, elem, marker)
 	}
 
 	if (elem < left) {
-		marker.max = marker.min;
-		marker.min -= Math.floor(diff / 2);
+		marker.max = marker.min
+		marker.min -= Math.floor(diff / 2)
 		return binarySearch(array, elem, marker)
 	}
 
-	marker.max -= Math.ceil(diff / 2);
+	marker.max -= Math.ceil(diff / 2)
 	return binarySearch(array, elem, marker)
 }
