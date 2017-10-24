@@ -8,7 +8,7 @@ module.exports = binarySearch
  * @example - binarySearch(array, elem)
  * @param {object} array - target array
  * @param {number} elem - target elem
- * @param {object|undefined} marker - object with min and max search range params (non required)
+ * @param {object} marker - object with min and max search range params (non required)
  * @returns {number|null} - index of the equal value (if it exists) or null
  * */
 
